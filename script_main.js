@@ -18,3 +18,8 @@ setInterval(() => {
     }, 500);
   }
 }, 3000);
+
+
+//-----------------------
+const type = document.querySelectorAll('[name="type"]')
+type.forEach(()=>{})
