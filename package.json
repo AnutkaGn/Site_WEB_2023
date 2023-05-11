@@ -1,0 +1,25 @@
+{
+  "name": "site_web_2023",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnutkaGn/Site_WEB_2023.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnutkaGn/Site_WEB_2023/issues"
+  },
+  "homepage": "https://github.com/AnutkaGn/Site_WEB_2023#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "mongoose": "^7.1.1"
+  }
+}
