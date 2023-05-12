@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket.che</title>
+    <link rel="stylesheet" href="styles/style_main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Heebo&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="head_left">
+            <img id="logo_img" src="images\favicon.png" alt="icon">
+            <p>Ticket.che</p>
+            </div>
+            <div class="head_right">
+                <div>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <img id="header_img" src="images\user.png" alt="icon">
+                <img id="header_img" src="images\shopping_cart.png" alt="icon">
+            </div>
+        </div>
+    </header>
+    <div class="title_box">
+        <span>Афіша заходів в Черкасах</span>
+    </div>
+    <div class="carousel">
+        <div class="carousel-container">
+            <!--<img src="images/arrow_left.png" id="prev-btn" onclick="prevSlide()">-->
+            <div class="carousel_img">
+                <img src="images/«МАВКА.ШОУ».jpeg">
+                <img src="images/«ПОЖЕЖА».jpeg">
+                <img src="images/«Попелюшка» (театр ім. М. Л. Кропивницького).jpeg">
+                <img src="images/«Ханума» А. Цагарелі.jpeg">
+                <img src="images/Ансамбль танцю ім. П. Вірського.jpeg">
+                <img src="images/Венздей Аддамс та Хагі Вагі у Грі в кальмара.jpeg">
+                <img src="images/Жіноча логіка.jpeg">
+                <img src="images/Кайдашева сім'я.jpeg">
+                <img src="images/Настя Каменських. Благодійний тур «Я - Україна».jpeg">
+                <img src="images/Носороги.jpeg">
+                <img src="images/Петро Бампер_Сус.jpeg">
+                <img src="images/Степан Гіга. Золоті хіти.jpeg">
+                <img src="images/Украдене щастя.jpeg">
+            </div>
+            <!--<img src="images/arrow_right.png" id="next-btn" onclick="nextSlide()">-->
+        </div>
+    </div>
+    <div class="type_selector">
+        <div>
+            <input type="checkbox" name="type" id="all_types" value="all">
+            <label for="all">Усі типи</label>
+        </div>
+        <div>
+            <input type="checkbox" name="type" id="concert" value="cocert">
+            <label for="cocert">Концерти</label>
+        </div>
+        <div>
+            <input type="checkbox" name="type" id="stand_up" value="stand-up">
+            <label for="stand-up">Stand-Up</label>
+        </div>
+        <div>
+            <input type="checkbox" name="type" id="theatre" value="theatre">
+            <label for="theatre">Театр</label>
+        </div>
+        <div>
+            <input type="checkbox" name="type" id="kids" value="kids">
+            <label for="kids">Дітям</label>
+        </div>
+    </div>
+    <script src="scripts/script_main.js"></script>
+</body>
+</html>
