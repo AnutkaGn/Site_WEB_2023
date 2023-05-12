@@ -105,6 +105,58 @@ body{
   justify-content: space-around;
 }
 
-#all_types{
+section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section > div{
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  justify-content: space-between;
+}
+
+.image_concert > img{
+  width: 250px;
+}
+.text_concert{
+
+  width: 56%;
+}
+
+.text_concert > p{
+  font-family:'Heebo', sans-serif;
+}
+.p1_concert{
+  font-family:'Heebo', sans-serif;
+  font-size: 20px;
+}
+.p_concert{
+  font-size: 17px;
+}
+.text_concert > h1{
+  font-family: 'Roboto Slab', serif;
+  font-size: 40px;
+}
+.price_concert{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  
+
+}
+.price_concert > input{
+  width: 130px;
+  height: 35px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 22px;
+  color: white;
+  background-color: #75855D;
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 40px;
 
 }
