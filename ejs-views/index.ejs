@@ -56,7 +56,7 @@
     </div>
     <div class="type_selector">
         <div>
-            <input type="checkbox" name="type" id="all_types" value="all">
+            <input type="checkbox" name="type" id="all_types" value="all" checked>
             <label for="all">Усі типи</label>
         </div>
         <div>
@@ -78,20 +78,25 @@
     </div>
 
     <section>
-        <div>
-            <div class="image_concert"><img src="/«МАВКА.ШОУ».jpeg" alt="Мавка"></div>
-            <div class="text_concert">
-                <h1>«Мавка.шоу»</h1>
-                <p class="p1_concert">Грандіозна премʼєра від творців шоу «Вартові Мрій» та «Winterra», створена за мотивами найочікуванішого українського мультиплікаційного фільму «Мавка. Лісова пісня».</p>
-                <p class="p_concert">12 травня, 2023</p>
-                <p class="p_concert">Міський будинок культури ім. Івана Кулика</p>
-            </div>
-            <div class="price_concert">
-                <p class="p1_concert">Ціна: 400</p>
-                <input type="button" value="Купити">
-            </div>
-        </div>
-        <hr>
+        <% if (concerts.length) {%>
+            <% concerts.forEach(({id, concertname, description, address, time, date, price, poster, type}) => { %>
+                <div>
+                    <div class="image_concert"><img src="<%= poster %>"></div>
+                    <div class="text_concert">
+                        <h1><%= concertname %></h1>
+                        <p class="p1_concert"><%= description %></p>
+                        <p class="p_concert"><%= date %></p>
+                        <p class="p_concert"><%= time %></p>
+                        <p class="p_concert"><%= address %></p>
+                    </div>
+                    <div class="price_concert">
+                        <p class="p1_concert">Ціна: <%= price %></p>
+                        <input type="button" value="Купити">
+                    </div>
+                </div>
+                <hr>
+            <% }) %>
+        <% } %>
     </section>
     <input type="button" value="Завантажити ще">
     <script src="/script_main.js"></script>
