@@ -21,6 +21,10 @@ setInterval(() => {
 
 
 //-----------------------
-const type = document.querySelectorAll('[name="type"]')
+let type = document.querySelectorAll('[name="type"]')
 const checkedBoxes = [];
-type.forEach((box) => {box.checked ? checkedBoxes.push(box): null})
+type.forEach((box) => {box.checked ? checkedBoxes.push(box.value) : null})
+if (!checkedBoxes.length){
+  type[0].checked = true;
+  checkedBoxes.push(type[0].value)
+}

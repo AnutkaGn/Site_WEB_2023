@@ -41,6 +41,10 @@ const concertSchema = new Schema({
     type: {
         type: String,
         required: true
+    },
+    redirect: {
+        type: String,
+        required: true
     }
 });
 

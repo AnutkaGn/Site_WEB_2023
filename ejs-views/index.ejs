@@ -56,30 +56,30 @@
     </div>
     <div class="type_selector">
         <div>
-            <input type="checkbox" name="type" id="all_types" value="all" checked>
+            <input type="checkbox" name="type" id="all_types" value="all" onchange="" <% if (!checkedTypes || checkedTypes.includes('all')) { %> checked <% } %>>
             <label for="all">Усі типи</label>
         </div>
         <div>
-            <input type="checkbox" name="type" id="concert" value="cocert">
+            <input type="checkbox" name="type" id="concert" value="cocert" onchange="" <% if (checkedTypes && checkedTypes.includes('concert')) { %> checked <% } %>>
             <label for="cocert">Концерти</label>
         </div>
         <div>
-            <input type="checkbox" name="type" id="stand_up" value="stand-up">
+            <input type="checkbox" name="type" id="stand_up" value="stand-up" onchange="" <% if (checkedTypes && checkedTypes.includes('stand-up')) { %> checked <% } %>>
             <label for="stand-up">Stand-Up</label>
         </div>
         <div>
-            <input type="checkbox" name="type" id="theatre" value="theatre">
+            <input type="checkbox" name="type" id="theater" value="theatre" onchange="" <% if (checkedTypes && checkedTypes.includes('theater')) { %> checked <% } %>>
             <label for="theatre">Театр</label>
         </div>
         <div>
-            <input type="checkbox" name="type" id="kids" value="kids">
+            <input type="checkbox" name="type" id="kids" value="kids" onchange="" <% if (checkedTypes && checkedTypes.includes('kids')) { %> checked <% } %>>
             <label for="kids">Дітям</label>
         </div>
     </div>
 
     <section>
         <% if (concerts.length) {%>
-            <% concerts.forEach(({id, concertname, description, address, time, date, price, poster, type}) => { %>
+            <% concerts.forEach(({id, concertname, description, address, time, date, price, poster, type, redirect}) => { %>
                 <div>
                     <div class="image_concert"><img src="<%= poster %>"></div>
                     <div class="text_concert">
@@ -91,7 +91,9 @@
                     </div>
                     <div class="price_concert">
                         <p class="p1_concert">Ціна: <%= price %></p>
-                        <input type="button" value="Купити">
+                        <a href="<%= '/'+redirect %>">
+                            <input type="button" value="Купити">
+                        </a>
                     </div>
                 </div>
                 <hr>

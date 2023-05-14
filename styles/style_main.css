@@ -4,6 +4,8 @@ font-family: 'Roboto Slab', serif;*/
 body{
   margin: 0px;
   background-color: #F4F4F4;
+  display: flex;
+  flex-direction: column;
 }
 .header{
   display: flex;
@@ -96,13 +98,14 @@ body{
 
 .type_selector{
   margin: 3%;
-  width: 94%;
-  height: 15%;
+  width: 85%;
+  height: 35px;
   background: #F4F4F4;
   border: 3px solid #000000;
-  border-radius: 5%;
+  border-radius: 5px;
   display: flex;
   justify-content: space-around;
+  align-self: center;
 }
 
 section{
@@ -148,7 +151,7 @@ section > div{
   
 
 }
-.price_concert > input{
+.price_concert input{
   width: 130px;
   height: 35px;
   font-family: 'Heebo', sans-serif;
@@ -159,4 +162,12 @@ section > div{
   border-radius: 4px;
   margin-bottom: 40px;
 
+}
+section > hr{
+  margin-bottom: 35px;
+  margin-top: 20px;
+  width: 85%;
+  height: 2px;
+  background-color: #343434;
+  justify-self: center;
 }

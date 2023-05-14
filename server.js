@@ -7,6 +7,7 @@ const Users = require('./models/user');
 const PORT = 3000
 const db = 'mongodb+srv://MaxKorop:ObSn6adbUaegKRyk@cluster0.gmaomsf.mongodb.net/Project_DB?retryWrites=true&w=majority'
 const app = express()
+let checkedTypes = []
 
 mongoose.connect(db, {
   useNewUrlParser: true,
@@ -31,7 +32,7 @@ app.get('/', (req, res) => {
     Concerts
         .find()
         .then((concerts) => {
-            res.render(createPath('index'), {concerts}) 
+            res.render(createPath('index'), {concerts, checkedTypes}) 
         })
         .catch((error) => {console.log(error)});
 })
