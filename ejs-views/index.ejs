@@ -56,27 +56,27 @@
     </div>
     <div class="type_selector">
         <div>
-            <input type="checkbox" name="type" id="all_types" value="all" onchange="" <% if (!checkedTypes || checkedTypes.includes('all')) { %> checked <% } %>>
+            <input type="checkbox" name="type" id="all_types" value="all" onclick="changeCheckbox('all')" <% if (!checkedTypes || checkedTypes.includes('all')) { %> checked <% } %>>
             <label for="all">Усі типи</label>
         </div>
         <div>
-            <input type="checkbox" name="type" id="concert" value="cocert" onchange="" <% if (checkedTypes && checkedTypes.includes('concert')) { %> checked <% } %>>
+            <input type="checkbox" name="type" id="concert" value="concert" onclick="changeCheckbox('concert')" <% if (checkedTypes && checkedTypes.includes('concert')) { %> checked <% } %>>
             <label for="cocert">Концерти</label>
         </div>
         <div>
-            <input type="checkbox" name="type" id="stand_up" value="stand-up" onchange="" <% if (checkedTypes && checkedTypes.includes('stand-up')) { %> checked <% } %>>
+            <input type="checkbox" name="type" id="stand_up" value="stand-up" onclick="changeCheckbox('stand-up')" <% if (checkedTypes && checkedTypes.includes('stand-up')) { %> checked <% } %>>
             <label for="stand-up">Stand-Up</label>
         </div>
         <div>
-            <input type="checkbox" name="type" id="theater" value="theatre" onchange="" <% if (checkedTypes && checkedTypes.includes('theater')) { %> checked <% } %>>
+            <input type="checkbox" name="type" id="theater" value="theater" onclick="changeCheckbox('theater')" <% if (checkedTypes && checkedTypes.includes('theater')) { %> checked <% } %>>
             <label for="theatre">Театр</label>
         </div>
         <div>
-            <input type="checkbox" name="type" id="kids" value="kids" onchange="" <% if (checkedTypes && checkedTypes.includes('kids')) { %> checked <% } %>>
+            <input type="checkbox" name="type" id="kids" value="kids" onclick="changeCheckbox('kids')" <% if (checkedTypes && checkedTypes.includes('kids')) { %> checked <% } %>>
             <label for="kids">Дітям</label>
         </div>
+        <input type="submit" value="Обрати" style="height: 25px;" onclick="submitForm(event)">
     </div>
-
     <section>
         <% if (concerts.length) {%>
             <% concerts.forEach(({id, concertname, description, address, time, date, price, poster, type, redirect}) => { %>
@@ -100,7 +100,6 @@
             <% }) %>
         <% } %>
     </section>
-    <input type="button" value="Завантажити ще">
     <script src="/script_main.js"></script>
 </body>
 </html>

@@ -22,9 +22,37 @@ setInterval(() => {
 
 //-----------------------
 let type = document.querySelectorAll('[name="type"]')
-const checkedBoxes = [];
-type.forEach((box) => {box.checked ? checkedBoxes.push(box.value) : null})
-if (!checkedBoxes.length){
+let checkedCheckboxes = [];
+type.forEach((checkbox) => {checkbox.checked ? checkedCheckboxes.push(checkbox.value) : null})
+if (!checkedCheckboxes.length){
   type[0].checked = true;
-  checkedBoxes.push(type[0].value)
+  checkedCheckboxes.push(type[0].value)
+}
+
+// Функція для обробки зміни стану checkbox
+function changeCheckbox(checkboxValue) {
+  let type = document.querySelectorAll('[name="type"]')
+  const checkbox = document.querySelector(`[value="${checkboxValue}"]`)
+
+  if (checkboxValue === 'all' && checkbox.checked) {
+    // Якщо обраний перший checkbox, зняти прапорець з інших
+    type.forEach((checkbox) => {checkbox.value !== checkboxValue ? checkbox.checked = false : checkbox.checked = true})
+  } else if (checkbox !== 'all' && checkbox.checked) {
+    // Якщо обраний інший checkbox, зняти прапорець з першого
+    const firstCheckbox = document.querySelector('[value="all"]');
+    firstCheckbox.checked = false;
+  }
+
+  type = document.querySelectorAll('[name="type"]')
+  checkedCheckboxes = []
+  type.forEach((checkbox) => {checkbox.checked ? checkedCheckboxes.push(checkbox.value): null})
+  console.log(checkedCheckboxes)
+}
+
+function submitForm(event){
+  event.preventDefault()
+
+  const url = `/types?types=${JSON.stringify(checkedCheckboxes)}`
+
+  fetch(url).then(html => window.location.href = url).catch(error => {console.error(error)})
 }
