@@ -30,6 +30,23 @@ app.use(express.static('styles'));
 app.use(express.static('images'));
 app.use(express.static('scripts'));
 
+app.get('/logIn', (req, res) => {
+    const {username, password} = JSON.parse(req.query.user)
+    Users
+        .find({username: username, password:password})
+        .then((user) => {
+            res.render(createPath('index'), {user}, (err, html) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send('Internal Server Error');
+                  } else {
+                    res.send(html);
+                  }
+            })
+        })
+        .catch((error) => {console.log(error)});
+})
+
 app.get('/types', (req, res) => {
     const types = JSON.parse(req.query.types);
     checkedTypes = types
