@@ -15,12 +15,10 @@ const userSchema = new Schema({
         required: true
     },
     tickets: {
-        type: Array,
-        required: true
+        type: Array
     },
     status: {
-        type: Boolean,
-        required: true
+        type: Boolean
     }
 });
 

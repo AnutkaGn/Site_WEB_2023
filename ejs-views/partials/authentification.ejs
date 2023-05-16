@@ -1,0 +1,89 @@
+<div id="openModal" class="modalDialog">
+    <div class="LogIn">
+        <h2>Ввійти в акаунт</h2>
+        <label for="login"><p>Ім'я користувача</p></label>
+        <input type="text" id="login" name="login">
+        <label for="password"><p>Пароль</p></label>
+        <input type="password" id="password" name="password">
+        <a title="Ввійти" class="close" id="logIn">Ввійти</a>
+    </div>
+    <div class="SignUp">
+        <h2>Реєстрація</h2>
+        <label for="login"><p>Ім'я користувача</p></label>
+        <input type="text" id="login" name="login">
+        <label for="password"><p>Пароль</p></label>
+        <input type="password" id="password" name="password">
+        <label for="password"><p>Електронна пошта</p></label>
+        <input type="email" id="email" name="email">
+        <a title="Ввійти" class="close" id="logIn">Зареєструватися</a>
+    </div>
+</div>
+<div id="openModalLogined" class="modalDialog">
+    <div>
+        <h1>Мій кабінет</h1>
+        <label for="login" id="labelLogin">Ім'я користувача:</label><br>
+        <label for="password" id="labelEMail">Електронна пошта:</label>
+        <a title="Закрити вікно" class="close" id="closeBtn" style="width: 150px;">Закрити вікно</a>
+    </div>
+</div>
+<style>
+    
+    .modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    display: none;
+    pointer-events: none;
+}
+
+.modalDialog:target {
+	display: block;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 400px;
+    height: 285px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #c8c8c8;
+}
+
+.SignUp{
+    display: none;
+}
+
+.modalDialog input{
+    height: 20px;
+    border: 2px solid #636363;
+    border-radius: 4px;
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: 35px;
+	text-align: center;
+	top: 255px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 4px;
+	box-shadow: 1px 1px 3px #000;
+    width: 75px;
+
+}
+
+.close:hover { background: #00d9ff; }
+</style>

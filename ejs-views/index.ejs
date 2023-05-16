@@ -12,6 +12,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.png">
 </head>
 <body>
+    <%- include('./partials/authentification.ejs') %>
     <header>
         <div class="header">
             <div class="head_left">
@@ -25,8 +26,8 @@
                         <span class="slider"></span>
                     </label>
                 </div>
-                <img id="header_img" src="/user.png" alt="icon">
-                <img id="header_img" src="/shopping_cart.png" alt="icon">
+                <a href="#openModal"><img id="header_img" src="/user.png" alt="icon"></a>
+                <a href=""><img id="header_img" src="/shopping_cart.png" alt="icon"></a>
             </div>
         </div>
     </header>

@@ -56,3 +56,8 @@ function submitForm(event){
 
   fetch(url).then(html => window.location.href = url).catch(error => {console.error(error)})
 }
+
+//------------------------
+const username = document.getElementById('login')
+const password = document.getElementById('password')
+const email = document.getElementById('email')
