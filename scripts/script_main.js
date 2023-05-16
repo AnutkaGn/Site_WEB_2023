@@ -58,65 +58,65 @@ function submitForm(event){
 }
 
 //------------------------
-const usernameLog = document.getElementById('loginLog')
-const passwordLog = document.getElementById('passwordLog')
-const usernameSign = document.getElementById('loginSign')
-const passwordSign = document.getElementById('passwordSign')
-const email = document.getElementById('email')
-const LogBtn = document.getElementById('LogBtn')
-const SignBtn = document.getElementById('SignBtn')
+// const usernameLog = document.getElementById('loginLog')
+// const passwordLog = document.getElementById('passwordLog')
+// const usernameSign = document.getElementById('loginSign')
+// const passwordSign = document.getElementById('passwordSign')
+// const email = document.getElementById('email')
+// const LogBtn = document.getElementById('LogBtn')
+// const SignBtn = document.getElementById('SignBtn')
 
 
-LogBtn.addEventListener('click', () => {
-  if (passwordLog.value.length <= 8 ){
-    alert('Ви ввели короткий пароль, він має бути не менше 8 символів в довжину')
-  }
-  else if (usernameLog.value.includes('@') 
-    || username.value.includes('!') 
-    || username.value.includes('~') 
-    || username.value.includes('?') 
-    || username.value.includes('`') 
-    || username.value.includes("'")){
-      alert("Ім'я користувача не може містити наступний символів: \"@\", \"!\", \"?\", \"~\", \"`\", \"'\"")
-  }
-  else{
-    const user = {username : usernameLog.value, password: passwordLog.value} 
+// LogBtn.addEventListener('click', () => {
+//   if (passwordLog.value.length <= 8 ){
+//     alert('Ви ввели короткий пароль, він має бути не менше 8 символів в довжину')
+//   }
+//   else if (usernameLog.value.includes('@') 
+//     || username.value.includes('!') 
+//     || username.value.includes('~') 
+//     || username.value.includes('?') 
+//     || username.value.includes('`') 
+//     || username.value.includes("'")){
+//       alert("Ім'я користувача не може містити наступний символів: \"@\", \"!\", \"?\", \"~\", \"`\", \"'\"")
+//   }
+//   else{
+//     const user = {username : usernameLog.value, password: passwordLog.value} 
 
-    const url = `/logIn?user=${JSON.stringify(user)}`
+//     const url = `/logIn?user=${JSON.stringify(user)}`
 
-    fetch(url)
-      .then(response => { if (response.text().length) {response.text()}else{alert("Ім'я користувача чи пароль неправильні, переконайтеся, що все введено правильно")}})
-      .then(html => window.location.href = url)
-      .catch(error => {console.error(error)})
-  }
-})
+//     fetch(url)
+//       .then(response => { if (response.text().length) {response.text()}else{alert("Ім'я користувача чи пароль неправильні, переконайтеся, що все введено правильно")}})
+//       .then(html => window.location.href = url)
+//       .catch(error => {console.error(error)})
+//   }
+// })
 
-SignBtn.addEventListener('click', () => {
-  if (passwordSign.value.length <= 8 ){
-    alert('Ви ввели короткий пароль, він має бути не менше 8 символів в довжину')
-  }
-  else if (usernameSign.value.includes('@') 
-    || username.value.includes('!') 
-    || username.value.includes('~') 
-    || username.value.includes('?') 
-    || username.value.includes('`') 
-    || username.value.includes("'")){
-      alert("Ім'я користувача не може містити наступний символів: \"@\", \"!\", \"?\", \"~\", \"`\", \"'\"")
-  }
-  else{
-    const user = {username : usernameLog.value, password: passwordLog.value} 
+// SignBtn.addEventListener('click', () => {
+//   if (passwordSign.value.length <= 8 ){
+//     alert('Ви ввели короткий пароль, він має бути не менше 8 символів в довжину')
+//   }
+//   else if (usernameSign.value.includes('@') 
+//     || username.value.includes('!') 
+//     || username.value.includes('~') 
+//     || username.value.includes('?') 
+//     || username.value.includes('`') 
+//     || username.value.includes("'")){
+//       alert("Ім'я користувача не може містити наступний символів: \"@\", \"!\", \"?\", \"~\", \"`\", \"'\"")
+//   }
+//   else{
+//     const user = {username : usernameLog.value, password: passwordLog.value} 
 
-    const url = `/signUp`
+//     const url = `/signUp`
 
-    fetch(url, {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(user)
-    })
-      .then(response => response.text())
-      .then(html => window.location.href = url)
-      .catch(error => {console.error(error)})
-  }
-})
+//     fetch(url, {
+//       method: "POST",
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(user)
+//     })
+//       .then(response => response.text())
+//       .then(html => window.location.href = url)
+//       .catch(error => {console.error(error)})
+//   }
+// })
