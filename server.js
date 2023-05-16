@@ -91,16 +91,31 @@ app.get('/', (req, res) => {
         .catch((error) => {console.log(error)});
 })
 
-app.get('/dram', (req, res) => {
-    res.render(createPath('dram'));
+app.get('/dram/:id', (req, res) => {
+    Concerts
+        .findById(new mongoose.Types.ObjectId(req.params.id))
+        .then((concert) => {
+            res.render(createPath('dram'), {concert})
+        })
+        .catch((error) => {console.log(error)});
 })
 
-app.get('/druzhba', (req, res) => {
-    res.render(createPath('druzhba'));
+app.get('/druzhba/:id', (req, res) => {
+    Concerts
+        .findById(new mongoose.Types.ObjectId(req.params.id))
+        .then((concert) => {
+            res.render(createPath('druzhba'), {concert})
+        })
+        .catch((error) => {console.log(error)});
 })
 
-app.get('/fila', (req, res) => {
-    res.render(createPath('fila'));
+app.get('/fila/:id', (req, res) => {
+    Concerts
+        .findById(new mongoose.Types.ObjectId(req.params.id))
+        .then((concert) => {
+            res.render(createPath('fila'), {concert})
+        })
+        .catch((error) => {console.log(error)});
 })
 
 app.use((req, res) => {
