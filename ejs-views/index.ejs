@@ -77,13 +77,14 @@
         </div>
         <input type="submit" value="Обрати" style="height: 25px;" onclick="submitForm(event)">
     </div>
+    
     <section>
         <% if (concerts.length) {%>
             <% concerts.forEach(({id, concertname, description, address, time, date, price, poster, type, redirect}) => { %>
                 <div>
                     <div class="image_concert"><img src="<%= poster %>"></div>
                     <div class="text_concert">
-                        <h1><%= concertname %></h1>
+                        <a href="<%= '/'+redirect %>"><%= concertname %></a>
                         <p class="p1_concert"><%= description %></p>
                         <p class="p_concert"><%= date %></p>
                         <p class="p_concert"><%= time %></p>

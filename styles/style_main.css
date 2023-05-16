@@ -58,7 +58,7 @@ body{
   display: flex;
   justify-content: center;
   font-size: 38px;
-  margin-top: 40px;
+  margin-top: 30px;
   font-weight:600;
 
 }
@@ -99,13 +99,16 @@ body{
 .type_selector{
   margin: 3%;
   width: 85%;
-  height: 35px;
+  height: 44px;
   background: #F4F4F4;
   border: 3px solid #000000;
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
   align-self: center;
+  align-items: center;
+  font-family: 'Roboto Slab';
+  font-size: 17px;
 }
 
 .type_selector > *{
@@ -114,20 +117,9 @@ body{
   flex-direction: row;
 }
 
-.type_selector > div > label{
-  margin-top: 8px;
-}
-.type_selector > div > input{
-  background-color: #A03E3E;
-}
-
-.checkbox:checked:before{
-  color: #A03E3E;
-}
 
 
 .type_selector > input{
-  margin-top: 5px;
   width: 100px;
   font-family: 'Heebo', sans-serif;
   font-size: 15px;
@@ -136,6 +128,10 @@ body{
   border: 0;
   border-radius: 4px;
 }
+.type_selector > input:hover{
+  background-color: #8e4848;
+}
+
 
 section{
   width: 100%;
@@ -152,7 +148,15 @@ section > div{
 
 .image_concert > img{
   width: 250px;
+  transform:rotateY(180deg);
+  transition: all .5s;
 }
+.image_concert > img:hover{
+  transform:rotateY(180deg);
+  transition: all .5s;
+  transform: scale(1.1);
+}
+  
 .text_concert{
 
   width: 56%;
@@ -168,18 +172,23 @@ section > div{
 .p_concert{
   font-size: 17px;
 }
-.text_concert > h1{
+.text_concert > a{
   font-family: 'Roboto Slab', serif;
-  font-size: 40px;
+  font-size: 37px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+}
+.text_concert > a:hover{
+  color: #75855D;
 }
 .price_concert{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  
-
 }
+
 .price_concert input{
   width: 130px;
   height: 35px;
@@ -190,6 +199,12 @@ section > div{
   border: 0;
   border-radius: 4px;
   margin-bottom: 40px;
+}
+.price_concert input:hover{
+  transform: scale(1.1);
+  background-color: #484f3d;
+  color: rgb(224, 224, 224);  
+  transition: background-color 0.8s 0.1s ease;
 
 }
 section > hr{
@@ -197,6 +212,6 @@ section > hr{
   margin-top: 20px;
   width: 85%;
   height: 2px;
-  background-color: #343434;
+  background-color:  #A03E3E;
   justify-self: center;
 }
