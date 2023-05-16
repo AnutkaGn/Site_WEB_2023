@@ -108,6 +108,35 @@ body{
   align-self: center;
 }
 
+.type_selector > *{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.type_selector > div > label{
+  margin-top: 8px;
+}
+.type_selector > div > input{
+  background-color: #A03E3E;
+}
+
+.checkbox:checked:before{
+  color: #A03E3E;
+}
+
+
+.type_selector > input{
+  margin-top: 5px;
+  width: 100px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 15px;
+  color: white;
+  background-color:  #A03E3E;
+  border: 0;
+  border-radius: 4px;
+}
+
 section{
   width: 100%;
   display: flex;
