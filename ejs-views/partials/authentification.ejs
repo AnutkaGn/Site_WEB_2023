@@ -1,14 +1,17 @@
 <div id="openModal" class="modalDialog">
-    <div class="LogIn">
-        <h2>Ввійти в акаунт</h2>
+    <div>
+        <div class="LogIn">
+        <center><h2>Ввійти в акаунт</h2>
         <label for="login"><p>Ім'я користувача</p></label>
         <input type="text" id="login" name="login">
         <label for="password"><p>Пароль</p></label>
         <input type="password" id="password" name="password">
-        <a title="Ввійти" class="close" id="btn">Ввійти</a>
+        <a title="Ввійти" class="close" id="btn">Ввійти</a></center>
     </div>
+    <input type="button" value="Ввійти" class="button enter">
+    <input type="button" value="Зареєструватися" class="button sign">
     <div class="SignUp">
-        <h2>Реєстрація</h2>
+        <center><h2>Реєстрація</h2></center>
         <label for="login"><p>Ім'я користувача</p></label>
         <input type="text" id="login" name="login">
         <label for="password"><p>Пароль</p></label>
@@ -17,6 +20,10 @@
         <input type="email" id="email" name="email">
         <a title="Ввійти" class="close" id="btn">Зареєструватися</a>
     </div>
+
+
+
+</div>
 </div>
 <div id="openModalLogined" class="modalDialog">
     <div>
@@ -27,36 +34,50 @@
     </div>
 </div>
 <style>
-    
-    .modalDialog {
+.button{
+	background: #75855D;
+	color: #FFFFFF;
+	height: 50px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 4px;
+	box-shadow: 1px 1px 3px #000;
+    width: 100px;
+    margin-top: 30px;
+    position: relative;
+    margin-bottom: 300px;
+}   
+.modalDialog {
     position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto Slab';
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background: rgba(0,0,0,0.8);
     z-index: 99999;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
     transition: opacity 400ms ease-in;
     display: none;
     pointer-events: none;
+
 }
 
 .modalDialog:target {
 	display: block;
 	pointer-events: auto;
+    
 }
 
-.modalDialog > div {
+.LogIn{
 	width: 400px;
     height: 285px;
 	position: relative;
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;
-	border-radius: 10px;
-	background: #c8c8c8;
+	border-radius: 4px;
+	background: #f8f8f8;
+
 }
 
 .SignUp{
@@ -66,24 +87,30 @@
 .modalDialog input{
     height: 20px;
     border: 2px solid #636363;
-    border-radius: 4px;
+    border-radius: 3px;
+    margin: 0;
+
 }
 
 .close {
-	background: #606061;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+	background: #75855D;
 	color: #FFFFFF;
-	line-height: 25px;
-	position: absolute;
-	right: 35px;
+	height: 33px;
 	text-align: center;
-	top: 255px;
 	text-decoration: none;
 	font-weight: bold;
 	border-radius: 4px;
 	box-shadow: 1px 1px 3px #000;
-    width: 75px;
+    width: 85px;
+    margin-top: 30px;
 
 }
 
-.close:hover { background: #00d9ff; }
+.close:hover { 
+  background-color: #484f3d;
+  color: rgb(224, 224, 224);
+}
 </style>
