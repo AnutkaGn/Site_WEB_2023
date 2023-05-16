@@ -51,7 +51,48 @@ body{
 }
 
 footer {
-    height: 40px;
+    height: 50px;
     background: #75855D;
-    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto Slab';
+    color: white;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto Slab';
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.content > img{
+    width: 500px;
+}
+
+.concertname{
+    margin: 10px 0;
+}
+
+.price{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.seat{
+    font-size: 17px;
+    font-weight: 500;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.seat > *{
+    margin-top: 10px;
+}
+.seat:last-of-type > *{
+    margin-bottom: 10px;
 }

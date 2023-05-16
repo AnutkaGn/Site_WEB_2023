@@ -85,7 +85,7 @@
                 <div>
                     <div class="image_concert"><img src="<%= poster %>"></div>
                     <div class="text_concert">
-                        <a href="<%= '/'+redirect %>"><%= concertname %></a>
+                        <a href="<%= '/'+redirect+'/'+id %>"><%= concertname %></a>
                         <p class="p1_concert"><%= description %></p>
                         <p class="p_concert"><%= date %></p>
                         <p class="p_concert"><%= time %></p>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="price_concert">
                         <p class="p1_concert">Ціна: <%= price %></p>
-                        <a href="<%= '/'+redirect %>">
+                        <a href="<%= '/'+redirect+'/'+id %>">
                             <input type="button" value="Купити">
                         </a>
                     </div>
