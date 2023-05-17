@@ -83,17 +83,19 @@
         <% if (concerts.length) {%>
             <% concerts.forEach(({id, concertname, description, address, time, date, price, poster, type, redirect}) => { %>
                 <div>
-                    <div class="image_concert"><img src="<%= poster %>"></div>
-                    <div class="text_concert">
-                        <a href="<%= '/concert/'+id %>"><%= concertname %></a>
-                        <p class="p1_concert"><%= description %></p>
-                        <p class="p_concert"><%= date %></p>
-                        <p class="p_concert"><%= time %></p>
-                        <p class="p_concert"><%= address %></p>
+                    <div class="image_text">
+                        <div class="image_concert"><img src="<%= poster %>"></div>
+                        <div class="text_concert">
+                            <a href="<%= '/concert/'+id %>"><%= concertname %></a>
+                            <p class="p1_concert"><%= description %></p>
+                            <p class="p_concert"><%= date %></p>
+                            <p class="p_concert">Час початку: <%= time %></p>
+                            <p class="p_concert"><%= address %></p>
+                        </div>
                     </div>
                     <div class="price_concert">
                         <p class="p1_concert">Ціна: <%= price %></p>
-                        <a href="<%= '/'+redirect+'/'+id %>">
+                        <a href="<%= '/concert/'+id %>">
                             <input type="button" value="Купити">
                         </a>
                     </div>

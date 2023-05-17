@@ -19,22 +19,23 @@ body{
 }
 #logo_img{
   width: 45px;
-  padding-left: 5%;
+  padding-left: 10px;
 }
 #header_img{
   width: 45px;
+  padding-right: 30px;
 }
 .head_right{
   display: flex;
   align-items: center;
-  margin-right: 6%;
+  margin-right: 50px;
   justify-content: space-between;
-  width: 15%;
+  
 }
 .head_left{
   display: flex;
   align-items: center;
-  margin-left: 6%;
+  margin-left: 50px;
 }
 .header p{
   font-family: 'Bruno Ace SC';
@@ -61,6 +62,7 @@ body{
   font-weight:600;
 
 }
+/* карусель */
 .carousel{
   display: flex;
   justify-content: center;
@@ -94,7 +96,7 @@ body{
     width: calc(100% / 2);
   }
 }
-
+/* типи */
 .type_selector{
   margin: 3%;
   width: 85%;
@@ -137,14 +139,20 @@ section{
   flex-direction: column;
   align-items: center;
 }
-
+/*концерти */
 section > div{
   display: flex;
   flex-direction: row;
   width: 70%;
   justify-content: space-between;
 }
-
+.image_text{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 20px;
+}
 .image_concert > img{
   width: 250px;
   transition: all .5s;
@@ -157,7 +165,8 @@ section > div{
 }
   
 .text_concert{
-
+  display: flex;
+  flex-direction: column;
   width: 56%;
 }
 
@@ -226,5 +235,79 @@ section > hr{
   .header p{
     font-size: 30px;
   }
-  #logo{}
+  #header_img{
+    width: 45px;
+    padding-right: 10px;
+  }
+  .head_left{
+    margin-left: 30px;
+  }
+  .title_box{
+    font-size: 30px;
+    margin-top: 27px;
+    font-weight:600;
+  }
+  .type_selector{
+    width: 90%;
+    height: 44px;
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+  .type_selector > input{
+    width: 60px;
+    font-size: 12px;
+  }
+/*концерти */
+  section > div{
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+  }
+  .image_text{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image_concert > img{
+    width: 220px;
+
+  }
+  .text_concert > a{
+    font-size: 30px;
+    align-self: center;
+    margin-top: 10px;
+  }
+  .text_concert{
+    width: 90%;
+  }
+  .p1_concert{
+    font-size: 17px;
+  }
+  .p_concert{
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1100px){
+  section > div{
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+  }
+  .image_text{
+    width: 100%;
+    justify-content: space-between;
+  }
+  .image_concert > img{
+    width: 220px;
+  }
+  .text_concert{
+    width: 90%;
+    margin-left: 20px;
+  }
+  .p1_concert{
+    font-size: 19px;
+  }
+  .p_concert{
+    font-size: 16px;
+  }
 }

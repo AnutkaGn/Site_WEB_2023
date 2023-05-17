@@ -13,33 +13,36 @@ body{
     align-items: center;
     justify-content: space-between;
     padding: 5px, 20px, 5px, 50px;
-}
-#logo_img{
+  }
+  #logo_img{
     width: 45px;
-    padding-left: 5%;
-
-}
-#header_img{
+    padding-left: 10px;
+  }
+  #header_img{
     width: 45px;
-}
-.head_right{
+    padding-right: 30px;
+  }
+  .head_right{
     display: flex;
     align-items: center;
-    margin-right: 6%;
+    margin-right: 50px;
     justify-content: space-between;
-    width: 10%;
-}
-.head_left{
+    
+  }
+  .head_left{
     display: flex;
     align-items: center;
-    margin-left: 6%;
-}
-.header p{
+    margin-left: 50px;
+  }
+  .header p{
     font-family: 'Bruno Ace SC';
     font-size: 40px;
     font-weight:100;
     color: white;
     padding-left: 20px;
+  }
+.ukraina{
+    font-size: 30px;
 }
 .title_box{
     font-family: 'Roboto Slab', serif;
@@ -48,11 +51,36 @@ body{
     font-size: 38px;
     margin-top: 40px;
     font-weight:600;
+    
 }
+button{
+    background:  #A03E3E;
+    color: #FFFFFF;
+    height: 33px;
+    width: 180px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 300;
+    border-radius: 4px;
+    border: 0;
+    display: flex;
+    justify-content: space-around;
+    font-size: 17px;
+    align-items: center;
+    margin: 10px 0 20px 0
 
+}
+button:hover{ 
+    background-color: #623838;
+    color: rgb(224, 224, 224);
+}
 footer {
     height: 50px;
     background: #75855D;
+    width: 100%;
+    position: relative;
+    left: 0;
+    bottom: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -61,6 +89,7 @@ footer {
 }
 .content{
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     font-family: 'Roboto Slab';
@@ -74,7 +103,7 @@ footer {
 }
 
 .concertname{
-    margin: 10px 0;
+    margin: 25px 0;
 }
 
 .price{
@@ -89,10 +118,42 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 7px;
 }
-.seat > *{
-    margin-top: 10px;
+
+
+.seats{
+    margin: 25px 0 10px 0;
 }
-.seat:last-of-type > *{
-    margin-bottom: 10px;
+
+@media screen and (max-width: 768px){
+    .header p{
+        font-size: 30px;
+      }
+      #header_img{
+        width: 45px;
+        padding-right: 10px;
+      }
+      .head_left{
+        margin-left: 30px;
+      }
+    .ukraina{
+        display: none;
+    }
+    .concertname{
+        font-size: 15px;
+        margin: 20px;
+        align-self: center;
+    }
+    .content > img{
+        width: 450px;
+    }
+}
+@media screen and (max-width: 1100px){
+    .ukraina{
+        font-size: 20px;
+    }
+    .header p{
+        font-size: 35px;
+      }
 }

@@ -1,17 +1,19 @@
 <div class="content">
     <span class="concertname"><%= concert.concertname %>, <span class="price">ціна: <%= concert.price %> грн</span></span>
     <img src="/<%= concert.redirect %>.jpg" alt="">
-    <div class="seat">
-        <label for="seat">Місце</label>
-        <input type="number" id="seat">
-    </div>
-    <div class="seat">
-        <label for="row">Ряд</label>
-        <input type="number" id="row">
+    <div class="seats">
+        <div class="seat">
+            <label for="seat">Місце</label>
+            <input type="number" id="seat">
+        </div>
+        <div class="seat">
+            <label for="row">Ряд</label>
+            <input type="number" id="row">
+        </div>
     </div>
     <button>Забронювати</button>
 </div>
-<%- include('./partials/authentification.ejs') %>
+<%- include('./authentification.ejs') %>
 <footer>
     <div><p>10% від суми йде у фонд ЗСУ</p></div>
 </footer>

@@ -110,7 +110,7 @@ app.get('/concert/:id', (req, res) => {
     Concerts
         .findById(new mongoose.Types.ObjectId(req.params.id))
         .then((concert) => {
-            res.render(createPath('dram'), {concert})
+            res.render(createPath('concert'), {concert})
         })
         .catch((error) => {console.log(error)});
 })
