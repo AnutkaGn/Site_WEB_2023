@@ -1,29 +1,29 @@
 <div id="openModal" class="modalDialog">
 
-        <div class="LogIn">
+      <div class="LogIn" id="LogIn">
         <center><h2>Ввійти в акаунт</h2>
         <label for="login"><p>Ім'я користувача</p></label>
-        <input type="text" id="login" name="login">
+        <input type="text" id="loginLog" name="login">
         <label for="password"><p>Пароль</p></label>
-        <input type="password" id="password" name="password">
-        <a title="Ввійти" class="close" id="btn">Ввійти</a>
+        <input type="password" id="passwordLog" name="password">
+        <a title="Ввійти" class="close" id="LogBtn">Ввійти</a>
 
-        <button class="button" onclick="showRegisterForm()">Ввійти</button>
-        <button class="button sign" onclick="showLoginForm()">Зареєструватися</button></center>
+        <button class="button" onclick="showLoginForm()">Ввійти</button>
+        <button class="button sign" onclick="showRegisterForm()">Зареєструватися</button></center>
     </div>
     
-    <div class="SignUp">
+    <div class="SignUp" id="SignUp">
         <center><h2>Реєстрація</h2>
         <label for="login"><p>Ім'я користувача</p></label>
-        <input type="text" id="login" name="login">
+        <input type="text" id="loginSign" name="login">
         <label for="password"><p>Пароль</p></label>
-        <input type="password" id="password" name="password">
+        <input type="password" id="passwordSign" name="password">
         <label for="password"><p>Електронна пошта</p></label>
         <input type="email" id="email" name="email">
-        <a title="Ввійти" class="close" id="btn">Зареєструватися</a>
+        <a title="Ввійти" class="close_sign" id="SignBtn">Зареєструватися</a>
 
-        <button class="button" onclick="showRegisterForm()">Ввійти</button>
-        <button class="button sign" onclick="showLoginForm()">Зареєструватися</button></center>
+        <button class="button" onclick="showLoginForm()">Ввійти</button>
+        <button class="button sign" onclick="showRegisterForm()">Зареєструватися</button></center>
 
 </div>
 </div>
@@ -77,8 +77,9 @@
 }
 
 .LogIn{
+  display: block;
 	width: 400px;
-    height: 285px;
+  height: 285px;
 	position: relative;
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;
@@ -87,7 +88,33 @@
 
 }
 .SignUp{
-    display: none;
+  display: none;
+  width: 400px;
+  height: 370px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 4px;
+	background: #f8f8f8;
+}
+.close_sign{
+  width: 160px;
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+	background:  #A03E3E;
+	color: #FFFFFF;
+	height: 33px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 300;
+	border-radius: 4px;
+	box-shadow: 1px 1px 3px #000;
+    margin-top: 30px;
+}
+.close_sign:hover { 
+  background-color: #623838;
+  color: rgb(224, 224, 224);
 }
 .modalDialog input{
     height: 20px;
@@ -136,16 +163,18 @@
 </style>
 <script>
 function showRegisterForm() {
-  var front = document.querySelector('.LogIn');
-  var back = document.querySelector('.SignUp');
-  front.style.transform = 'rotateY(-180deg)';
-  back.style.transform = 'rotateY(0deg)';
+  let signUp = document.getElementById("SignUp")
+  let logIn = document.getElementById("LogIn")
+
+  signUp.style.display = "block"
+  logIn.style.display = "none"
 }
 
 function showLoginForm() {
-  var front = document.querySelector('.LogIn');
-  var back = document.querySelector('.SignUp');
-  front.style.transform = 'rotateY(0deg)';
-  back.style.transform = 'rotateY(180deg)';
+  let signUp = document.getElementById("SignUp")
+  let logIn = document.getElementById("LogIn") 
+  
+  logIn.style.display = "block"
+  signUp.style.display = "none"
 }
 </script>

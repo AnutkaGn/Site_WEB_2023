@@ -9,6 +9,7 @@ const db = 'mongodb+srv://MaxKorop:ObSn6adbUaegKRyk@cluster0.gmaomsf.mongodb.net
 const app = express()
 let checkedTypes = ['all']
 
+
 mongoose.connect(db, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -43,6 +44,16 @@ app.get('/logIn', (req, res) => {
                     res.send(html);
                   }
             })
+        })
+        .catch((error) => {console.log(error)});
+})
+
+app.post('/signUp', (req, res) => {
+    const {username, password, email} = JSON.parse(req.body)
+    Users
+        .save({username: username, password:password, email: email})
+        .then((user) => {
+            res.send(true)
         })
         .catch((error) => {console.log(error)});
 })
