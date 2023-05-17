@@ -27,46 +27,38 @@
 
 </div>
 </div>
-<div id="openModalLogined" class="modalDialog">
-    <div>
-        <h1>Мій кабінет</h1>
-        <label for="login" id="labelLogin">Ім'я користувача:</label><br>
-        <label for="password" id="labelEMail">Електронна пошта:</label>
-        <a title="Закрити вікно" class="close" id="closeBtn" style="width: 150px;">Закрити вікно</a>
-    </div>
-</div>
 <style>
 .button{
-    font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab';
 	background: #75855D;
-    font-size: 18px;
+  font-size: 18px;
 	color: #FFFFFF;
 	height: 50px;
 	text-align: center;
 	text-decoration: none;
 	font-weight: 300;
 	border-radius: 4px;
-    width: 170px;
-    margin-top: 50px;
-    position: relative;
+  width: 170px;
+  margin-top: 50px;
+  position: relative;
 }  
 
 .sign{
-    background-color:  #A03E3E;
+  background-color:  #A03E3E;
 
 } 
 .modalDialog {
-    position: fixed;
-    font-family: 'Roboto Slab';
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.881);
-    z-index: 99999;
-    transition: opacity 400ms ease-in;
-    display: none;
-    pointer-events: none;
+  position: fixed;
+  font-family: 'Roboto Slab';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.881);
+  z-index: 99999;
+  transition: opacity 400ms ease-in;
+  display: none;
+  pointer-events: none;
 
 }
 
@@ -100,8 +92,8 @@
 .close_sign{
   width: 160px;
   display: flex;
-    justify-content: space-around;
-    align-items: center;
+  justify-content: space-around;
+  align-items: center;
 	background:  #A03E3E;
 	color: #FFFFFF;
 	height: 33px;
@@ -110,22 +102,22 @@
 	font-weight: 300;
 	border-radius: 4px;
 	box-shadow: 1px 1px 3px #000;
-    margin-top: 30px;
+  margin-top: 30px;
 }
 .close_sign:hover { 
   background-color: #623838;
   color: rgb(224, 224, 224);
 }
 .modalDialog input{
-    height: 20px;
-    border: 2px solid #636363;
-    border-radius: 3px;
-    margin: 0;
+  height: 20px;
+  border: 2px solid #636363;
+  border-radius: 3px;
+  margin: 0;
 }
 .close {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 	background: #75855D;
 	color: #FFFFFF;
 	height: 33px;
@@ -134,8 +126,8 @@
 	font-weight: 300;
 	border-radius: 4px;
 	box-shadow: 1px 1px 3px #000;
-    width: 85px;
-    margin-top: 30px;
+  width: 85px;
+  margin-top: 30px;
 }
 .close:hover { 
   background-color: #484f3d;
@@ -161,6 +153,7 @@
 }
 
 </style>
+
 <script>
 function showRegisterForm() {
   let signUp = document.getElementById("SignUp")

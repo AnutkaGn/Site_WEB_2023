@@ -59,6 +59,7 @@ function submitForm(event){
 
 //------------------------
 let logined = false
+let loginedUser = {}
 const usernameLog = document.getElementById('loginLog')
 const passwordLog = document.getElementById('passwordLog')
 const usernameSign = document.getElementById('loginSign')
@@ -66,6 +67,31 @@ const passwordSign = document.getElementById('passwordSign')
 const email = document.getElementById('email')
 const LogBtn = document.getElementById('LogBtn')
 const SignBtn = document.getElementById('SignBtn')
+const modal = document.getElementById("openModal")
+let users = {
+  users: [
+    {
+      "_id": {
+        "$oid": "645a13b816f29c2395c5e7cc"
+      },
+      "username": "MaxKorop",
+      "password": "@K23_M02_A05",
+      "e_mail": "makskorop99@gmail.com",
+      "tickets": [],
+      "status": true
+    },
+    {
+      "_id": {
+        "$oid": "645a13b816f29c2395c5e7cd"
+      },
+      "username": "AnutkaGn",
+      "password": "$_AN5&das_34",
+      "e_mail": "annaartemivna@gmail.com",
+      "tickets": [],
+      "status": true
+    }
+  ]
+}
 
 
 LogBtn.addEventListener('click', () => {
@@ -73,22 +99,34 @@ LogBtn.addEventListener('click', () => {
     alert('Ви ввели короткий пароль, він має бути не менше 8 символів в довжину')
   }
   else if (usernameLog.value.includes('@') 
-    || username.value.includes('!') 
-    || username.value.includes('~') 
-    || username.value.includes('?') 
-    || username.value.includes('`') 
-    || username.value.includes("'")){
+    || usernameLog.value.includes('!') 
+    || usernameLog.value.includes('~') 
+    || usernameLog.value.includes('?') 
+    || usernameLog.value.includes('`') 
+    || usernameLog.value.includes("'")){
       alert("Ім'я користувача не може містити наступний символів: \"@\", \"!\", \"?\", \"~\", \"`\", \"'\"")
   }
   else{
-    const user = {username : usernameLog.value, password: passwordLog.value} 
+    console.log('else')
+    users.users.forEach((user) => {
+      if (usernameLog.value == user.username && passwordLog.value == user.password){
+        logined = true
+        loginedUser = {
+          username: user.username,
+          password: user.password,
+          email: user.email
+        }
+        LogBtn.setAttribute("href", "#close")
+      }
+    })
+    // const user = [usernameLog.value, passwordLog.value]
 
-    const url = `/logIn?user=${JSON.stringify(user)}`
+    // const url = `/user?user=${JSON.stringify(user)}`
 
-    fetch(url)
-      .then(response => logined = true)
-      .then(html => window.location.href = url)
-      .catch(error => {console.error(error)})
+    // fetch(url)
+    //   .then(response => logined = true)
+    //   .then(html => window.location.href = url)
+    //   .catch(error => {console.error(error)})
   }
 })
 
@@ -97,26 +135,36 @@ SignBtn.addEventListener('click', () => {
     alert('Ви ввели короткий пароль, він має бути не менше 8 символів в довжину')
   }
   else if (usernameSign && usernameSign.value.includes('@') 
-    || username.value.includes('!') 
-    || username.value.includes('~') 
-    || username.value.includes('?') 
-    || username.value.includes('`') 
-    || username.value.includes("'")){
+    || usernameSign.value.includes('!') 
+    || usernameSign.value.includes('~') 
+    || usernameSign.value.includes('?') 
+    || usernameSign.value.includes('`') 
+    || usernameSign.value.includes("'")){
       alert("Ім'я користувача не може містити наступний символів: \"@\", \"!\", \"?\", \"~\", \"`\", \"'\"")
   }
   else{
-    const user = {username : usernameLog.value, password: passwordLog.value, email: email.value} 
-
-    const url = `/signUp`
-
-    fetch(url, {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(user)
+    console.log('else')
+    
+    SignBtn.setAttribute("href", "#close")
+    users.users.push({
+      "username": usernameSign.value,
+      "password": passwordSign.value,
+      "email": email.value,
+      "tickets": [],
+      "status": false
     })
-      .then(response => logined = response)
-      .catch(error => {console.error(error)})
+    // const user = {username : usernameLog.value, password: passwordLog.value, email: email.value} 
+
+    // const url = `/signUp`
+
+    // fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(user)
+    // })
+    //   .then(response => logined = response)
+    //   .catch(error => {console.error(error)})
   }
 })

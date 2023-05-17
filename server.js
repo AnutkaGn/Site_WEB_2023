@@ -8,6 +8,7 @@ const PORT = 3000
 const db = 'mongodb+srv://MaxKorop:ObSn6adbUaegKRyk@cluster0.gmaomsf.mongodb.net/Project_DB?retryWrites=true&w=majority'
 const app = express()
 let checkedTypes = ['all']
+let returnedConcerts = []
 
 
 mongoose.connect(db, {
@@ -31,32 +32,32 @@ app.use(express.static('styles'));
 app.use(express.static('images'));
 app.use(express.static('scripts'));
 
-app.get('/logIn', (req, res) => {
-    const {username, password} = JSON.parse(req.query.user)
-    Users
-        .find({username: username, password:password})
-        .then((user) => {
-            res.render(createPath('index'), {user}, (err, html) => {
-                if (err) {
-                    console.error(err);
-                    res.status(500).send('Internal Server Error');
-                  } else {
-                    res.send(html);
-                  }
-            })
-        })
-        .catch((error) => {console.log(error)});
-})
+// app.get('/user', (req, res) => {
+//     const {username, password} = JSON.parse(req.query.user)
+//     Users
+//         .find({username: username, password:password})
+//         .then((user) => {
+//             res.render(createPath('index'), {returnedConcerts, checkedTypes, user}, (err, html) => {
+//                 if (err) {
+//                     console.error(err);
+//                     res.status(500).send('Internal Server Error');
+//                   } else {
+//                     res.send(html);
+//                   }
+//             })
+//         })
+//         .catch((error) => {console.log(error)});
+// })
 
-app.post('/signUp', (req, res) => {
-    const {username, password, email} = JSON.parse(req.body)
-    Users
-        .save({username: username, password:password, email: email})
-        .then((user) => {
-            res.send(true)
-        })
-        .catch((error) => {console.log(error)});
-})
+// app.post('/signUp', (req, res) => {
+//     const {username, password, email} = JSON.parse(req.body)
+//     Users
+//         .save({username: username, password:password, email: email})
+//         .then((user) => {
+//             res.send(true)
+//         })
+//         .catch((error) => {console.log(error)});
+// })
 
 app.get('/types', (req, res) => {
     const types = JSON.parse(req.query.types);
@@ -65,6 +66,7 @@ app.get('/types', (req, res) => {
         Concerts
         .find()
         .then((concerts) => {
+            returnedConcerts = concerts
             res.render(createPath('index'), {concerts, checkedTypes}, (err, html) => {
                 if (err) {
                     console.error(err);
@@ -80,6 +82,7 @@ app.get('/types', (req, res) => {
         Concerts
             .find({type: {$in: types}})
             .then((concerts) => {
+                returnedConcerts = concerts
                 res.render(createPath('index'), {concerts, checkedTypes}, (err, html) => {
                     if (err) {
                         console.error(err);
@@ -97,34 +100,17 @@ app.get('/', (req, res) => {
     Concerts
         .find()
         .then((concerts) => {
+            returnedConcerts = concerts
             res.render(createPath('index'), {concerts, checkedTypes}) 
         })
         .catch((error) => {console.log(error)});
 })
 
-app.get('/dram/:id', (req, res) => {
+app.get('/concert/:id', (req, res) => {
     Concerts
         .findById(new mongoose.Types.ObjectId(req.params.id))
         .then((concert) => {
             res.render(createPath('dram'), {concert})
-        })
-        .catch((error) => {console.log(error)});
-})
-
-app.get('/druzhba/:id', (req, res) => {
-    Concerts
-        .findById(new mongoose.Types.ObjectId(req.params.id))
-        .then((concert) => {
-            res.render(createPath('druzhba'), {concert})
-        })
-        .catch((error) => {console.log(error)});
-})
-
-app.get('/fila/:id', (req, res) => {
-    Concerts
-        .findById(new mongoose.Types.ObjectId(req.params.id))
-        .then((concert) => {
-            res.render(createPath('fila'), {concert})
         })
         .catch((error) => {console.log(error)});
 })

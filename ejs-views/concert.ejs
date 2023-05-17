@@ -13,22 +13,7 @@
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
-    <div class="content">
-        <span class="concertname"><%= concert.concertname %>, <span class="price">ціна: <%= concert.price %> грн</span></span>
-        <img src="/fila.jpg" alt="">
-        <div class="seat">
-            <label for="seat">Місце</label>
-            <input type="number" id="seat">
-        </div>
-        <div class="seat">
-            <label for="row">Ряд</label>
-            <input type="number" id="row">
-        </div>
-    </div>
-    <%- include('./partials/authentification.ejs') %>
-    <footer>
-        <div><p>10% від суми йде у фонд ЗСУ</p></div>
-    </footer>
-    <script src="/script_fila.js"></script>
+    <%- include('./partials/content.ejs') %>
+    <script src="/script_dram.js"></script>
 </body>
 </html>

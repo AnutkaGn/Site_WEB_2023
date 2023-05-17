@@ -20,7 +20,6 @@ body{
 #logo_img{
   width: 45px;
   padding-left: 5%;
-
 }
 #header_img{
   width: 45px;
@@ -117,8 +116,6 @@ body{
   flex-direction: row;
 }
 
-
-
 .type_selector > input{
   width: 100px;
   font-family: 'Heebo', sans-serif;
@@ -128,6 +125,7 @@ body{
   border: 0;
   border-radius: 4px;
 }
+
 .type_selector > input:hover{
   background-color: #8e4848;
 }
@@ -139,6 +137,7 @@ section{
   flex-direction: column;
   align-items: center;
 }
+
 section > div{
   display: flex;
   flex-direction: row;
@@ -148,9 +147,9 @@ section > div{
 
 .image_concert > img{
   width: 250px;
-  transform:rotateY(180deg);
   transition: all .5s;
 }
+
 .image_concert > img:hover{
   transform:rotateY(180deg);
   transition: all .5s;
@@ -165,13 +164,16 @@ section > div{
 .text_concert > p{
   font-family:'Heebo', sans-serif;
 }
+
 .p1_concert{
   font-family:'Heebo', sans-serif;
   font-size: 20px;
 }
+
 .p_concert{
   font-size: 17px;
 }
+
 .text_concert > a{
   font-family: 'Roboto Slab', serif;
   font-size: 37px;
@@ -179,9 +181,11 @@ section > div{
   text-decoration: none;
   font-weight: 600;
 }
+
 .text_concert > a:hover{
   color: #75855D;
 }
+
 .price_concert{
   display: flex;
   flex-direction: column;
@@ -200,6 +204,7 @@ section > div{
   border-radius: 4px;
   margin-bottom: 40px;
 }
+
 .price_concert input:hover{
   transform: scale(1.1);
   background-color: #484f3d;
@@ -207,6 +212,7 @@ section > div{
   transition: background-color 0.8s 0.1s ease;
 
 }
+
 section > hr{
   margin-bottom: 35px;
   margin-top: 20px;
@@ -214,4 +220,11 @@ section > hr{
   height: 2px;
   background-color:  #A03E3E;
   justify-self: center;
+}
+
+@media screen and (max-width: 768px){
+  .header p{
+    font-size: 30px;
+  }
+  #logo{}
 }
