@@ -231,6 +231,29 @@ section > hr{
   justify-self: center;
 }
 
+footer {
+  height: 50px;
+  background: #75855D;
+  width: 100%;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Roboto Slab';
+  color: white;
+}
+
+.foot_left{
+  align-self: flex-start;
+}
+
+.foot_right{
+  align-self: flex-end;
+}
+
 @media screen and (max-width: 768px){
   .header p{
     font-size: 30px;

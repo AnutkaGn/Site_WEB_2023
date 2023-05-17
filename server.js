@@ -115,6 +115,10 @@ app.get('/concert/:id', (req, res) => {
         .catch((error) => {console.log(error)});
 })
 
+app.get('/shopping_cart', (req, res) => {
+    res.render(createPath('shopping_cart'))
+})
+
 app.use((req, res) => {
     res.render(createPath('index'));
 })
