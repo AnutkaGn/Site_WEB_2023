@@ -1,0 +1,379 @@
+/*font-family: 'Bruno Ace SC', cursive;
+font-family: 'Heebo', sans-serif;
+font-family: 'Roboto Slab', serif;*/
+body{
+  margin: 0px;
+  background-color: #F4F4F4;
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  display: flex;
+  width: 100%;
+  height: 75px;
+  background-color: #A03E3E;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px, 20px, 5px, 50px;
+}
+#logo_img{
+  width: 45px;
+  padding-left: 10px;
+}
+#header_img{
+  width: 45px;
+  padding-right: 30px;
+}
+.head_right{
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+  justify-content: space-between;
+  
+}
+.head_left{
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+.header p{
+  font-family: 'Bruno Ace SC';
+  font-size: 40px;
+  font-weight:100;
+  color: white;
+  padding-left: 20px;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+} 
+.switch input {
+  display:none;
+}
+.title_box{
+  font-family: 'Roboto Slab', serif;
+  display: flex;
+  justify-content: center;
+  font-size: 38px;
+  margin-top: 30px;
+  font-weight:600;
+
+}
+/* карусель */
+.carousel{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.carousel-container {
+  overflow: hidden;
+  width: 96%;
+}
+
+.carousel_img {
+  display: flex;
+  transition: transform 0.5s ease;
+
+}
+
+.carousel_img img {
+  width: calc(100% / 4.1);
+  margin-right: 10px;
+  
+}
+
+@media (max-width: 768px) {
+  .carousel img {
+    width: calc(100% / 3);
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel img {
+    width: calc(100% / 2);
+  }
+}
+/* типи */
+.type_selector{
+  margin: 3%;
+  width: 85%;
+  height: 44px;
+  background: #F4F4F4;
+  border: 3px solid #000000;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  align-items: center;
+  font-family: 'Roboto Slab';
+  font-size: 17px;
+}
+
+.type_selector > *{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.type_selector > input{
+  width: 100px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 15px;
+  color: white;
+  background-color:  #A03E3E;
+  border: 0;
+  border-radius: 4px;
+}
+
+.type_selector > input:hover{
+  background-color: #8e4848;
+}
+
+
+section{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*концерти */
+section > div{
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  justify-content: space-between;
+}
+.image_text{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 20px;
+}
+.image_concert > img{
+  width: 250px;
+  transition: all .5s;
+}
+
+.image_concert > img:hover{
+  transform:rotateY(180deg);
+  transition: all .5s;
+  transform: scale(1.1);
+}
+  
+.text_concert{
+  display: flex;
+  flex-direction: column;
+  width: 56%;
+}
+
+.text_concert > p{
+  font-family:'Heebo', sans-serif;
+}
+
+.p1_concert{
+  font-family:'Heebo', sans-serif;
+  font-size: 20px;
+}
+
+.p_concert{
+  font-size: 17px;
+}
+
+.text_concert > a{
+  font-family: 'Roboto Slab', serif;
+  font-size: 37px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.text_concert > a:hover{
+  color: #75855D;
+}
+
+.price_concert{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.price_concert input{
+  width: 130px;
+  height: 35px;
+  font-family: 'Heebo', sans-serif;
+  font-size: 22px;
+  color: white;
+  background-color: #75855D;
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 40px;
+}
+
+.price_concert input:hover{
+  transform: scale(1.1);
+  background-color: #484f3d;
+  color: rgb(224, 224, 224);  
+  transition: background-color 0.8s 0.1s ease;
+
+}
+
+section > hr{
+  margin-bottom: 35px;
+  margin-top: 20px;
+  width: 85%;
+  height: 2px;
+  background-color:  #A03E3E;
+  justify-self: center;
+}
+
+/* Футер */
+footer {
+  height: 200px;
+  background: #75855D;
+  width: 100%;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+  font-family: 'Roboto Slab';
+  color: white;
+}
+.foot_text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+#foot_img{
+  width: 50px;
+  height: 50px;
+  margin-top: 18px;
+  margin-right: 10px;
+  margin: 18px 10px 0 10px;
+
+}
+.foot_left{
+  display: flex;
+  flex-direction: row;
+}
+.left_right{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.foot_right{
+  width: 260px;
+  object-fit: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 40px;
+  margin-top: 20px;
+}
+.foot_right > img{
+  width: 40px;
+}
+.foot_left > p{
+  font-family: 'Bruno Ace SC';
+  font-size: 30px;
+  font-weight:100;
+}
+
+footer > hr{
+  width: 85%;
+  height: 3px;
+  background-color:  #ffffff;
+  justify-self: center;
+}
+
+@media screen and (max-width: 768px){
+  .header p{
+    font-size: 30px;
+  }
+  #header_img{
+    width: 45px;
+    padding-right: 10px;
+  }
+  .head_left{
+    margin-left: 30px;
+  }
+  .title_box{
+    font-size: 30px;
+    margin-top: 27px;
+    font-weight:600;
+  }
+  .type_selector{
+    width: 90%;
+    height: 44px;
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+  .type_selector > input{
+    width: 60px;
+    font-size: 12px;
+  }
+/*концерти */
+  section > div{
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+  }
+  .image_text{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image_concert > img{
+    width: 220px;
+
+  }
+  .text_concert > a{
+    font-size: 30px;
+    align-self: center;
+    margin-top: 10px;
+  }
+  .text_concert{
+    width: 90%;
+  }
+  .p1_concert{
+    font-size: 17px;
+  }
+  .p_concert{
+    font-size: 15px;
+  }
+}
+
+
+@media screen and (max-width: 1100px){
+  section > div{
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+  }
+  .image_text{
+    width: 100%;
+    justify-content: space-between;
+  }
+  .image_concert > img{
+    width: 220px;
+  }
+  .text_concert{
+    width: 90%;
+    margin-left: 20px;
+  }
+  .p1_concert{
+    font-size: 19px;
+  }
+  .p_concert{
+    font-size: 16px;
+  }
+}
